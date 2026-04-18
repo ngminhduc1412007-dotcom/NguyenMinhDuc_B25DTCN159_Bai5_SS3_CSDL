@@ -22,7 +22,7 @@ UPDATE ORDERS
 SET IsDeleted = 1 
 WHERE Status = 'Canceled';
 
-CREATE INDEX idx_active_orders ON ORDERS (IsDeleted, Status);
+CREATE INDEX active_orders ON ORDERS (IsDeleted, Status);
 
 SELECT * FROM ORDERS 
 WHERE IsDeleted = 0;
